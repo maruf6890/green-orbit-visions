@@ -52,6 +52,35 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				// Environmental color scales
+				temperature: {
+					hot: 'hsl(var(--temperature-hot))',
+					moderate: 'hsl(var(--temperature-moderate))',
+					cool: 'hsl(var(--temperature-cool))'
+				},
+				pollution: {
+					high: 'hsl(var(--pollution-high))',
+					moderate: 'hsl(var(--pollution-moderate))',
+					low: 'hsl(var(--pollution-low))'
+				},
+				greenery: {
+					high: 'hsl(var(--greenery-high))',
+					moderate: 'hsl(var(--greenery-moderate))',
+					low: 'hsl(var(--greenery-low))'
+				},
+				flood: {
+					high: 'hsl(var(--flood-high))',
+					moderate: 'hsl(var(--flood-moderate))',
+					low: 'hsl(var(--flood-low))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +113,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
+				},
+				'slide-in': {
+					'0%': {
+						transform: 'translateX(-100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'slide-in': 'slide-in 0.3s ease-out'
+			},
+			backgroundImage: {
+				'environmental-gradient': 'var(--gradient-environmental)',
+				'air-quality-gradient': 'var(--gradient-air-quality)',
+				'water-gradient': 'var(--gradient-water)'
 			}
 		}
 	},
