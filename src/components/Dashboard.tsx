@@ -125,26 +125,8 @@ const Dashboard = () => {
             </div>
 
             {/* Map Component */}
-            <LeafletMap activeLayer={activeLayer} />
+            <LeafletMap/>
 
-            {/* Legend */}
-            <div className="absolute bottom-4 left-4 bg-card/95 backdrop-blur-sm rounded-lg shadow-lg border border-border p-4">
-              <h4 className="text-sm font-semibold text-foreground mb-2">Legend</h4>
-              <div className="flex items-center space-x-4 text-xs">
-                <div className="flex items-center space-x-1">
-                  <div className="w-3 h-3 rounded-full bg-success"></div>
-                  <span className="text-muted-foreground">Good</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <div className="w-3 h-3 rounded-full bg-warning"></div>
-                  <span className="text-muted-foreground">Moderate</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <div className="w-3 h-3 rounded-full bg-destructive"></div>
-                  <span className="text-muted-foreground">Poor</span>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Sidebar */}
