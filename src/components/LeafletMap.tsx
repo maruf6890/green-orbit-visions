@@ -58,35 +58,35 @@ const nasaGibsLayers = [
     name: "MODIS True Color",
     url: "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/{time}/{tileMatrixSet}/{z}/{y}/{x}.jpg",
     attribution: "NASA GIBS",
-    time: "2023-08-01",
+    time: "2023-06-01", // Example date, can be dynamic
     tileMatrixSet: "GoogleMapsCompatible_Level9",
   },
   {
     name: "MODIS Aerosol",
     url: "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_Aerosol/default/{time}/{tileMatrixSet}/{z}/{y}/{x}.jpg",
     attribution: "NASA GIBS",
-    time: "2023-08-01",
+    time: "2023-06-01",
     tileMatrixSet: "GoogleMapsCompatible_Level9",
   },
   {
     name: "VIIRS Night (Nighttime Lights)",
     url: "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_CorrectedReflectance_TrueColor/default/{time}/{tileMatrixSet}/{z}/{y}/{x}.jpg",
     attribution: "NASA GIBS",
-    time: "2023-08-01",
+    time: "2023-06-01",
     tileMatrixSet: "GoogleMapsCompatible_Level9",
   },
   {
     name: "Blue Marble",
     url: "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/{time}/{tileMatrixSet}/{z}/{y}/{x}.jpg",
     attribution: "NASA GIBS",
-    time: "2023-08-01",
+    time: "2023-06-01",
     tileMatrixSet: "GoogleMapsCompatible_Level9",
   },
   {
     name: "Landsat WELD",
     url: "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual/default/{time}/{tileMatrixSet}/{z}/{y}/{x}.jpg",
     attribution: "NASA GIBS",
-    time: "2020",
+    time: "2020", // Annual data
     tileMatrixSet: "GoogleMapsCompatible_Level9",
   },
 ];
@@ -99,10 +99,9 @@ export default function DhakaMap() {
         zoom={13}
         scrollWheelZoom={true}
         style={{ height: "100%", width: "100%" }}
-        maxZoom={18} // OSM max zoom
       >
         <LayersControl position="topright">
-          {/* Base OpenStreetMap Layer */}
+          {/* Base Map */}
           <BaseLayer checked name="OpenStreetMap">
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -118,7 +117,6 @@ export default function DhakaMap() {
                 url={layer.url
                   .replace("{time}", layer.time)
                   .replace("{tileMatrixSet}", layer.tileMatrixSet)}
-                maxZoom={9} // Limit zoom to GIBS supported
               />
             </BaseLayer>
           ))}
@@ -172,7 +170,7 @@ export default function DhakaMap() {
 
                 if (p.type === "water") {
                   color = "blue";
-                  fillColor = "blue";
+                  fillColor = "red";
                 } else if (p.type === "air") {
                   color = "green";
                   fillColor = "green";
